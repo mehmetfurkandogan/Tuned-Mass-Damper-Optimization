@@ -1,5 +1,6 @@
 % Single Degree of Freedom Structure with a Single Tuned Mass Damper
 % The Effect of Damping and Stiffness Variation
+% It creates a 2d amplitude vs frequency plot
 % Mehmet Furkan Doğan
 % 01.08.2022
 clc;clear;close all;

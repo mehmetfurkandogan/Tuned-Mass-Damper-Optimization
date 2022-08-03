@@ -1,5 +1,7 @@
 % Single Degree of Freedom Structure with a Single Tuned Mass Damper
 % The Effect of Damping and Stiffness Variation
+% It finds the stiffness and damping coefficient vaues that yield the
+% minimum integral of the amplitude value
 % Mehmet Furkan Doğan
 % 02.08.2022
 clc;clear;close all;

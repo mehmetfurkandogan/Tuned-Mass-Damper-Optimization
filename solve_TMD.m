@@ -1,3 +1,4 @@
+% Function that solves vibration amplitude vector
 function X = solve_TMD(M,F,C,K,w)
     X = zeros(2,size(w,2));
     for iter = 1:size(w,2)

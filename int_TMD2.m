@@ -1,3 +1,4 @@
+% Function that calculates the integral of the vibration amplitude
 function I = int_TMD2(k2, c2)
     m1 = 1;     % kg
     m2 = 0.1;   % kg

@@ -1,3 +1,4 @@
+% Function that calculates the vibration amplitude and its integral
 function [X, I] = int_TMD(w1, w2, k2, c2, winc)
     m1 = 1;     % kg
     m2 = 0.1;   % kg
