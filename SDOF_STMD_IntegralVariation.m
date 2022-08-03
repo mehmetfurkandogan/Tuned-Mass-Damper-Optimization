@@ -8,15 +8,13 @@ clc;clear;close all;
 %% 
 w1 = 0.7;
 w2 = 1.2;
-% k2 = 10.^(-2:0.05:-1);
-% c2 = 10.^(-2:0.05:-1);
+winc = 0.001;  % rad/s
 k2 = 0.01:0.005:0.2;
 c2 = 0.01:0.005:0.2;
-winc = 0.001;  % rad/s
 I = zeros(size(k2,2),size(c2,2));
 for i = 1:size(k2,2)
     for j = 1:size(c2,2)
-        I(i,j) = int_TMD2(k2(i),c2(j));
+        I(i,j) = int_TMD2(w1,w2,k2(i),c2(j),winc);
     end
 end
 %% Plotting
