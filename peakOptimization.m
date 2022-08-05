@@ -31,9 +31,9 @@ plot(w1:winc:w2,X(1,:),'--k','linewidth',1.5);
 k2 = 0.0822;c2 = 0.0345;
 [X,I] = int_TMD(w1,w2,k2,c2, winc);
 plot(w1:winc:w2,X(1,:),'-.k','linewidth',1.5);
-% k2 = 0;c2 = 0;
-% [X,I] = int_TMD(w1,w2,k2,c2, winc);
-% plot(w1:winc:w2,X(1,:),'-b','linewidth',1.5);
+k2 = 0;c2 = 0;
+[X,I] = int_TMD(w1,w2,k2,c2, winc);
+plot(w1:winc:w2,X(1,:),'-b','linewidth',1.5);
 legend('Optimized integral (w from 0.7 to 1.2)',...
     'Optimized integral (w from 0.7 to 1.3)','Optimized peak'...
     ,'location','best');
