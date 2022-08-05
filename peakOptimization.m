@@ -13,9 +13,11 @@ x0 = [0.01, 0.01];
 options = optimoptions('fminunc','Algorithm','quasi-newton');
 options.Display = 'iter';
 [x, fval, exitflag, output] = fminunc(fun,x0,options);
+home
 fprintf('For optimized peak:\n');
 fprintf('k2 = %.4f N/m\n',x(1));
 fprintf('c2 = %.4f N*s/m\n',x(2));
+fprintf('peak = %.4f m\n',fval);
 %% Plotting
 winc = 0.001;  % rad/s
 fc = figure('name','TMD Optimization','numberTitle','off');
