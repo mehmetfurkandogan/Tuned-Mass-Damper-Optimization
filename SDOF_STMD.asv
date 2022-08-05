@@ -1,0 +1,17 @@
+% Single Degree of Freedom Structure with a Single Tuned Mass Damper
+% The Effect of Damping and Stiffness Variation
+% Optimizing the parameters using the peak points
+% Mehmet Furkan Doğan
+% 04.08.2022
+clc;clear;close all;
+%% Optimization
+w1 = 0.7;   % rad/s
+w2 = 1.2;   % rad/s
+%%
+fun = @(x) peak_TMD(w1,w2,x(1),x(2));
+x0 = [0.01, 0.01];
+options = optimoptions('fminunc','Algorithm','quasi-newton');
+options.Display = 'iter';
+[x, fval, exitflag, output] = fminunc(fun,x0,options);
+fprintf('For optimized peak:\n');
+fprintf('k2 = %.4f N/m\n',x(1));
