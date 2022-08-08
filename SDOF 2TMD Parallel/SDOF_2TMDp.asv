@@ -1,0 +1,20 @@
+% SDOF 2 parallel TMDs
+% Mehmet Furkan Doğan
+% 07.08.22
+clear;clc;close all;
+%%
+m1 = 1;
+m2 = 
+%%
+M = [   m1  0   0;
+        0   m2  0;
+        0   0   m3];
+C = [   c1+c2+c3    -c2     -c3;
+        -c2         c2      0;
+        -c3         0       c3];
+K = [   k1+k2+k3    -k2     -k3;
+        -k2         k2      0;
+        -k3         0       k3];
+F = [   f1;
+        0;
+        0];
