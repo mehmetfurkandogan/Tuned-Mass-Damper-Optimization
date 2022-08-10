@@ -13,9 +13,6 @@ function w = Undamped_Freq(m2,k2,k3)
             -k2         k2      0;
             -k3         0       k3];
     %%
-    syms w2
-    w2 = solve(det(K-w2*M)==0,w2);
-    w2 = double(w2);
-%     w2 = eig(M\K);
+    w2 = eig(M\K);
     w = real(sqrt(w2));
 end
