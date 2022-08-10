@@ -1,3 +1,4 @@
+% Function that solves the vibration amplitude vector
 function x1 = solve_TMD2(m2,k2,k3,c2,c3,w)
     % Mass
     m1 = 1;
@@ -24,5 +25,5 @@ function x1 = solve_TMD2(m2,k2,k3,c2,c3,w)
             f2;
             f3];
     %%
-    X = solve_TMD(M,F,C,K,w);
+    X = abs((-w.^2.*M+1i.*w.*C+K)\F);
     x1 = X(1);
