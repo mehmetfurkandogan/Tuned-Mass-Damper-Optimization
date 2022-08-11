@@ -1,7 +1,7 @@
 % Function that plots TMD solution
 function plot_TMD(m2,k2,k3,c2,c3)
     w1 = 0.7;
-    w2 = 1.2;
+    w2 = 1.6;
     winc = 0.001;
     w = w1:winc:w2;
     %%
@@ -12,5 +12,6 @@ function plot_TMD(m2,k2,k3,c2,c3)
     %%
     plot(w,x1,'LineWidth',1.5);
     % set(gca, 'YScale', 'log');                  % Logarithmic y scale
+    xlim([w1 w2])
 end
 
