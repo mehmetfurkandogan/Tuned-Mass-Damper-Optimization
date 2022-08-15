@@ -3,7 +3,7 @@
 % Optimizing the parameters using the peak points
 % Mehmet Furkan Doğan
 % 05.08.2022
-clc;clear;close all;
+% clc;clear;close all;
 %% Optimization
 w1 = 0.7;   % rad/s
 w2 = 1.2;   % rad/s
