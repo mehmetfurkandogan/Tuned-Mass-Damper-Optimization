@@ -1,0 +1,15 @@
+clear;home;close all;
+%%
+k2c = 0.0008;
+c2 = 0.045;
+[a p] = nlTMD_peak(k2c,c2);
+disp(p);
+w = 0.7:0.01:1.2;
+a = zeros(size(w));
+for i = 1:size(w,2)
+    a(i) = nlTMDamp(w(i),0.0008,0.045);
+end
+figure
+plot(w,a,'-o','LineWidth',1.5,'Color',[0.47,0.67,0.19],'MarkerFaceColor',[0 0 0]);
+grid on
+xlabel('w (rad/s)');ylabel('|x_1| (m)');

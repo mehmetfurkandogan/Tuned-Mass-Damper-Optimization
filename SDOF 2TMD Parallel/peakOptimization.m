@@ -6,6 +6,7 @@ clear;clc;close all;
 fun = @(TMDp) peak_TMD(TMDp(1),TMDp(2),TMDp(3),TMDp(4),TMDp(5));
 %           m2      k2      k3      c2      c3
 TMDp0 = [   0.0505    0.0510     0.0343     0.0139   0.0093];
+TMDp0 = [   0.04    0.05     0.05     0.002   0.01];
 options = optimoptions('fminunc','Algorithm','quasi-newton');
 options.Display = 'off';
 [TMDp, po, exitflag, output] = fminunc(fun,TMDp0,options);
