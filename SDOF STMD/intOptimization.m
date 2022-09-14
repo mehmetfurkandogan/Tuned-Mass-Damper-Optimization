@@ -26,7 +26,7 @@ k2 = 0.0911;c2 = 0.0272;
 [X,I] = int_TMD(w1,w2,k2,c2, winc);
 plot(w1:winc:w2,X(1,:),'-.k','linewidth',1.5);
 legend('Optimized imtegral (w from 0.7 to 1.2)',...
-    'Optimized imtegral (w from 0.7 to 1.3)','location','northwest');
+    'Optimized imtegral (w from 0.7 to 1.3)','location','best');
 title('Vibration Amplitude');
 xlabel('$\omega(rad/s)$','interpreter','latex');
 ylabel('$|x_1|(m)$','interpreter','latex');

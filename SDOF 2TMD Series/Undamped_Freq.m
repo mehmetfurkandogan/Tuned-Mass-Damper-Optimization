@@ -15,4 +15,5 @@ function w = Undamped_Freq(m2,k2,k3)
     %%
     w2 = eig(M\K);
     w = real(sqrt(w2));
+    w = sort(w);
 end
