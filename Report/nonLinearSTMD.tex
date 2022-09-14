@@ -1,0 +1,59 @@
+
+\section{Non-Linear Single Tuned Mass Damper}
+\begin{figure}[ht]
+    \centering
+    \input{Figures/nonlinear_STMD_Fig}
+    \caption{\raggedright SDOF System with non-linear STMD}
+    \label{fig:nlSTMD}
+\end{figure}
+\par Up to that section, we assumed that all the springs and dampers as linear devices. However, in reality none of them is truly linear. In addition to that, introducing non-linearity in a TMD may increase its performance. Due to those reasons, it is important to analyse non-linear TMDs. In that example, non-linearity is introduced with changing the linear spring with the non-linear one. For that spring, force and displacement function is $ F = x^3 \cdot k_{2c} $ instead of $ F = x \cdot k_2 $.
+\subsection{Analysis}
+EOM can be written as:\\
+\begin{align*}
+m_1 \ddot{x_1}+(c_1+c_2)\dot{x_1}-c_2\dot{x_2}+k_1x_1+k_{2c}(x_1-x_2)^3&=f_1\\
+m_2 \ddot{x_2}-c_2\dot{x_1}+c_2\dot{x_2}-k_{2c}(x_1-x_2)^3&=0
+\end{align*}
+We can write the state-space representation as follows:
+$$
+\frac{d}{dt}\begin{Bmatrix}
+ x_1\\
+ x_2\\
+ \dot{x_1}\\
+ \dot{x_2}
+\end{Bmatrix}=
+\begin{Bmatrix}
+ \dot{x_1}\\
+ \dot{x_2}\\
+ \ddot{x_1}\\
+ \ddot{x_2}
+\end{Bmatrix}=
+\begin{Bmatrix}
+ \dot{x_1}\\
+ \dot{x_2}\\
+ \frac{-(c_1+c_2)\dot{x_1}+c_2\dot{x_2}-k_1x_1-k_{2c}(x_1-x_2)^3+f_1sin(\omega t)}{m_1}\\
+\frac{c_2\dot{x_1}-c_2\dot{x_2}+k_{2c}(x_1-x_2)^3}{m_2} 
+\end{Bmatrix}
+$$
+For a given $ k_{2c} $, $ c_2 $ and $ \omega $ t is possible to solve that equation numerically using Runge Kutta Fehlberg method. Time domain solutions of the nonlinear system for the parameters $k_{2c} = 0.1 N/m^3$, $ c_2 = 0.05 N \cdot s / m $ and $ \omega = 0.8 rad/s $  and the optimum linear STMD can be seen at figure \ref{fig:nonlinearTimeDomain}. In that particular example, the response amplitude of the non-linear TMD is less than the response amplitude of the linear TMD.\\
+\begin{figure}[ht]
+    \centering
+    \centerfloat
+    \includegraphics[scale=0.6]{MATLAB Figures/nonlinear time domain.png}
+    \caption{Nonlinar STMD with optimum linear STMD}
+    \label{fig:nonlinearTimeDomain}
+\end{figure}
+As seen on the figure \ref{fig:nonlinearTimeDomain}, both linear and non-linear systems are reaching the steady state after some time. We can find the frequency response of the non-linear system by finding the steady state amplitudes for a range of $ \omega $ values. The frequency response of the system can be seen at figure \ref{fig:freq_nlTMD}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.6]{MATLAB Figures/nonlinear stiffness.png}
+    \caption{Frequency response of the nonlinear system}
+    \label{fig:freq_nlTMD}
+\end{figure}
+\par In previous sections, we tried to optimize the peak value of the frequency response of the systems. Unfortunately, for the nonlinear system, we can't find the exact maximum since the frequency response function is unknown. However, what we can do is to take the maximum calculated value as the maximum in order to understand the behavior of the system for different TMD parameters. Finding the peak values for a grid of different TMD parameters ($k_{2c}$ and $c_2$) we can create a plot. It can be seen at figure \ref{fig:peak_nl}.\\
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.6]{MATLAB Figures/nonlinear peak.png}
+    \caption{Peak values of the frequency response of the nonlinear TMD}
+    \label{fig:peak_nl}
+\end{figure}
+\par The system shows a chaotic behavior especially at the top left part of the plot. At other areas it has more predictable behaviour. However, it is important to point out that this plot has some significant drawbacks due to the assumptions made at each step while creating it. This should be considered while interpreting the results.

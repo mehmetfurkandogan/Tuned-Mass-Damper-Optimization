@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{standalone}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    urlcolor=black,
+    pdftitle={Tuned Mass Damper Optimization},
+    }
+\urlstyle{same}
+
+\usetikzlibrary{calc,patterns,decorations.pathmorphing,decorations.markings}
+
+\makeatletter
+\newcommand*{\centerfloat}{%
+  \parindent \z@
+  \leftskip \z@ \@plus 1fil \@minus \textwidth
+  \rightskip\leftskip
+  \parfillskip \z@skip}
+\makeatother
+
+\title{Undergraduate Research Project Report \\
+{\Large Middle East Technical University}}
+\author{Mehmet Furkan Doğan}
+\date{August 2022}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\listoffigures
+\include{introduction}
+\include{STMD.tex}
+\include{DTMD.tex}
+\include{NonLinearSTMD.tex}
+\include{Conclusion}
+\end{document}

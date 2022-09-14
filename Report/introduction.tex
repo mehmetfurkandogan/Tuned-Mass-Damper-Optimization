@@ -1,0 +1,22 @@
+\section{Introduction}
+\par In this project we are interested in tuned mass damper method for reducing vibration amplitude of a single degree of freedom (SDOF) system in figure \ref{fig:SDOF}. We tried different number and configurations of tuned mass dampers (TMD) and optimized those configurations. The system parameters of the SDOF system are:
+\begin{align*}
+    m_1 & = 1\,kg\\
+    k_1 & = 1\,N/m\\
+    c_1 & = 0.01\,Ns/m\\
+    f_1 & = 1\,N
+\end{align*}
+\begin{figure}[ht]
+    \centering
+    \input{Figures/SDOF_fig}
+    \caption{SDOF System}
+    \label{fig:SDOF}
+\end{figure}
+Frequency response of the system without any TMDs can be seen at figure \ref{fig:freq_SDOF}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.6]{MATLAB Figures/SDOF.png}
+    \caption{Frequency response of the SDOF system}
+    \label{fig:freq_SDOF}
+\end{figure}
